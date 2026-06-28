@@ -8,6 +8,7 @@ body {
   font-size: 1.5rem;
   line-height: 1.6;
   margin: 0 2rem;
+  width: min-content;
   cursor: default;
   background-color: #131313;
   color: #fafafa;
@@ -230,6 +231,7 @@ header h2 {
 @media (max-width: 958px) {
   .intro {
     flex-wrap: wrap;
+    min-width: fit-content;
   }
   .head_links {
     display: none;
@@ -343,6 +345,7 @@ header h2 {
 @media (max-width: 958px) {
   .block3 {
     flex-wrap: wrap;
+    min-width: fit-content;
   }
   .skill_imgs img {
     max-width: 150px;
