@@ -1,0 +1,374 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif, "roboto mono";
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0 1.5rem;
+  cursor: default;
+  background-color: #131313;
+  color: #fafafa;
+}
+
+h2 {
+  color: #1b1bff;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+header h2 {
+  transform: translateY(-20px);
+}
+
+.progress_nav {
+  width: 215px;
+  height: 6px;
+  border-radius: 5px;
+  border: 1px solid green;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background: linear-gradient(to right, red 0%, yellowgreen 50%, blue 100%);
+  transform: translateX(-10px);
+  background-repeat: no-repeat;
+  background-size: 0;
+  transform-origin: left;
+  animation: progress_scroll linear;
+  animation-timeline: scroll();
+  animation-range: cover 10px cover 100%;
+}
+@keyframes progress_scroll {
+  from {
+    background-size: 0% 6px;
+  }
+  to {
+    background-size: 100% 6px;
+  }
+}
+
+.head_links {
+  z-index: 1;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+.head_links a {
+  text-decoration: none;
+  padding: 10px;
+  color: blue;
+  transition: 1s;
+}
+.head_links a:hover {
+  transition: ease-in-out 0.5s;
+  font-size: 1.7rem;
+  color: hsl(189, 100%, 50%);
+  opacity: 1;
+}
+
+/*This Is just How I Like To Start My CSS Code Nothing More*/
+
+.intro {
+  background: #2c2c2c6c;
+  border-radius: 5rem;
+  box-shadow: 0px 0px 20px 20px #2f2f2f7f;
+  margin: 2rem 0;
+  padding: 0 2rem;
+  font-size: 2rem;
+  display: flex;
+  column-gap: 30px;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 35%;
+}
+.navid_txt {
+  color: #1b1bff;
+  transition: 0.5s;
+}
+.navid_txt:hover {
+  cursor: pointer;
+  color: #00ff9c;
+}
+.img_intro {
+  user-select: none;
+  box-shadow: 2px 3px 5px 3px blue;
+  cursor: crosshair;
+  display: flex;
+  flex-shrink: 0;
+  transition: 0.5s linear;
+  animation: bounce 30s infinite;
+  margin: 1.5rem;
+  scale: 0.9;
+}
+.img_intro:hover {
+  margin: 2rem;
+  scale: initial;
+}
+@keyframes bounce {
+  0% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px blue;
+  }
+  10% {
+    rotate: -20deg;
+    transform: translateY(-20px);
+    box-shadow: 3px 5px 8px 3px blue;
+  }
+  20% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px green;
+  }
+  30% {
+    rotate: -20deg;
+    transform: translateY(-20px);
+    box-shadow: 3px 5px 8px 3px yellowgreen;
+  }
+  40% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px yellow;
+  }
+  50% {
+    rotate: -20deg;
+    transform: translateY(-20px);
+    box-shadow: 3px 5px 8px 3px orange;
+  }
+  60% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px orangered;
+  }
+  70% {
+    rotate: -20deg;
+    transform: translateY(-20px);
+    box-shadow: 3px 5px 8px 3px red;
+  }
+  80% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px violet;
+  }
+  90% {
+    rotate: -20deg;
+    transform: translateY(-20px);
+    box-shadow: 3px 5px 8px 3px purple;
+  }
+  100% {
+    rotate: 20deg;
+    transform: translateY(20px);
+    box-shadow: 3px 5px 8px 3px blueviolet;
+  }
+}
+
+.txt_intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact_now a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact_now a:active {
+  color: greenyellow;
+}
+
+.contact_now {
+  color: beige;
+  border: 5px solid navy;
+  text-shadow: 0px 0px 20px white;
+  cursor: pointer;
+  text-align: center;
+  padding: 1rem;
+  background: #00ff9dbb;
+  border-radius: 5rem;
+  animation: jump 2s infinite linear;
+  transition: 0.8s linear;
+  scale: 0.8;
+}
+.contact_now:hover {
+  color: beige;
+  background: #0000ffbb;
+  scale: initial;
+}
+
+@keyframes jump {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0px 0px 4px 2px #1b1bff;
+  }
+  25% {
+    transform: translateY(-20px);
+    box-shadow: 0px 8px 4px 2px #1b1bff;
+  }
+  75% {
+    transform: translateY(20px);
+    box-shadow: 0px -8px 4px 2px #1b1bff;
+  }
+}
+
+@media (max-width: 958px) {
+  .body {
+    width: min-content;
+  }
+  .intro {
+    flex-wrap: wrap;
+    min-width: fit-content;
+  }
+  .head_links {
+    display: none;
+  }
+}
+
+/*complete and nice introduction flexbox this section pretty took me some time */
+
+.block2_container {
+  margin: 2rem 0;
+  background: #2c2c2c6c;
+  border-radius: 5rem;
+  padding: 0 2rem;
+  box-shadow: 0px 0px 20px 20px #2f2f2f7f;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+.block2 {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+}
+.skill_imgs div img {
+  user-select: none;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 2rem;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+  animation: opac linear 4s infinite;
+}
+@keyframes opac {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.progress_val {
+  color: #00ff9c;
+  min-width: 20ch;
+}
+
+.skill_imgs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  max-width: 500px;
+}
+
+.skill_imgs img:hover {
+  opacity: 1;
+  scale: 1.4;
+  cursor: crosshair;
+}
+.skill_imgs .skill_img1 {
+  box-shadow: 0px 0px 20px 2px #ff0000;
+}
+.skill_imgs .skill_img2 {
+  box-shadow: 0px 0px 20px 2px #0000ff;
+}
+.skill_imgs .skill_img3 {
+  box-shadow: 0px 0px 20px 2px #00ff00;
+}
+.skill_imgs .skill_img4 {
+  box-shadow: 0px 0px 20px 2px #ffff00;
+}
+
+.block3 {
+  background: #2c2c2c6c;
+  border-radius: 5rem;
+  box-shadow: 0px 0px 20px 20px #2f2f2f7f;
+  margin: 2rem 0;
+  display: flex;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 30%;
+}
+.block3 div {
+  padding: 0 1em;
+  text-align: left;
+}
+.contact_sec {
+  width: max-content;
+  text-align: justify;
+  color: #bfbfbf;
+}
+.contact_sec a,
+.contact_val {
+  text-decoration: none;
+  color: #00ff9dbb;
+}
+.contact_sec a:hover,
+a:focus {
+  color: #00fff0;
+}
+.contact_sec a:active {
+  color: #00ff00;
+}
+.about_sec {
+  color: #bfbfbf;
+}
+
+@media (max-width: 958px) {
+  .block3 {
+    flex-wrap: wrap;
+    min-width: fit-content;
+  }
+  .skill_imgs img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+@keyframes appear {
+  from {
+    scale: 0.5;
+    opacity: 0.5;
+    transform: translateX(-100px);
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+footer {
+  letter-spacing: 0.2rem;
+  font-family: monospace;
+  text-align: center;
+  font-size: initial;
+  opacity: 0.5;
+}
